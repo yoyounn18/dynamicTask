@@ -1,0 +1,4 @@
+propTypes 사용시 대소문자 구분
+
+component간 props 전달 시 띄어쓰기 안해야함
+
