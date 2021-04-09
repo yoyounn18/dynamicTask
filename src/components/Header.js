@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from './Button'
 
+// 전달한 props로 style을 컨트롤 해보면서 props의 움직임 학습
 const Header = ({ title, onClick, btnText }) => {
 
     return (

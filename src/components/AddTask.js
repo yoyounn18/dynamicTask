@@ -6,6 +6,7 @@ const AddTask = ({ onAdd }) => {
     const [reminder, setReminder] = useState(false)
 
     const onSubmit = (e) => {
+        //e.preventDefault는 submit a 태그 같은 제출 혹은 이동과 동시에 다시 리셋이 되는것을 막아준다
         e.preventDefault()
 
         if (!text) {
@@ -14,13 +15,13 @@ const AddTask = ({ onAdd }) => {
         }
 
         onAdd({ text, day, reminder })
-        setText('')
+        setText('') // 아래 form에서 setText 해준것을 onAdd의 props로 보낸 후 다시 객체를 비워주는 과정
         setDay('')
         setReminder(false)
     }
 
     return (
-        <form className='add-form' onSubmit={onSubmit}>
+        <form className='add-form' onSubmit={onSubmit}  >
             <div className='form-control'>
                 <label>Task</label>
                 <input type='text' placeholder='Add Task' value={text}

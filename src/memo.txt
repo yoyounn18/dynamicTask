@@ -2,3 +2,5 @@ propTypes 사용시 대소문자 구분
 
 component간 props 전달 시 띄어쓰기 안해야함
 
+&& 사용시 삼항연산자를 좀 더 간결하게 만들 수 있다.
+ex) true && show() === true ? show() : ''
