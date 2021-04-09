@@ -1,6 +1,60 @@
-propTypes 사용시 대소문자 구분
+비동기 처리란?
+ - 코드의 연산이 끝나기 전에 다음 코드를 먼저 실행하는 자바스크립트의 특성
+ - jquery의 Ajax가 대표적 
 
-component간 props 전달 시 띄어쓰기 안해야함
+Promise란?
+ - javascript의 비동기 처리를 위한 객체
+ - resolve와 reject라는 인자를 가지고 있다.
+ - Pending(대기), Fulfilled(이행), Rejected(실패)의 3가지 상태를 가지고 있다.
+-  resolve를 실행하면 이행 상태가 되는데 이후 then()을 이용하여 처리 결과 값을 받을 수 있다.
 
-&& 사용시 삼항연산자를 좀 더 간결하게 만들 수 있다.
-ex) true && show() === true ? show() : ''
+//사용 예
+function getData() {
+  return new Promise(function(resolve, reject) {
+    $.get('url/products/1', function(response) {
+      if (response) {
+        resolve(response);
+      }
+      reject(new Error("Request is failed"));
+    });
+  });
+}
+
+getData().then(function(data) {
+  console.log(data); // response 값 출력
+}).catch(function(err) {
+  console.error(err); // Error 출력
+});
+
+
+async와 await
+ - 가장 최근에 나온 비동기 통신 문법
+ - promise의 단점을 개선했음.
+ - 기본 문법
+
+ async function functionName () {
+     await 비동기 처리 메소드 명()
+ }
+
+ - 중요한 점은 비동기 처리 메소드가 꼭 반드시 Promise의 객체를 반환해야 한다는 점.
+ - 이 awiai의 대상이 되는 처리 코드가 Axios 등 API 호출 함수.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
